@@ -29,6 +29,8 @@ def lstm_model_kfold(name, lstm1_n, lstm2_n, fc3_n):
 	import tflearn
 	import speech_data 
 	import os
+	import time
+	import datetime
 	print("Imported libraries!")
 
 	# Hyperparameters: 
@@ -44,7 +46,7 @@ def lstm_model_kfold(name, lstm1_n, lstm2_n, fc3_n):
 	
 	# Training Features:
 	kfold_k = 5
-	training_iters = 100 # Multiply by 10 to know how many epochs
+	training_iters = 10 # Multiply by 10 to know how many epochs
 
 	# Dataset Features:	
 	dataset = 2400
@@ -109,6 +111,7 @@ def lstm_model_kfold(name, lstm1_n, lstm2_n, fc3_n):
 	print("\nInitiating " + str(kfold_k) + "-Fold training.\n")
 	printline()
 	kname = "K-Fold_" + name
+	start_time = time.time()
 	for i in range(kfold_k): 
 		# Fixing sets
 		validationX, validationY = datasetX[(i*val_sets):((i+1)*val_sets)], datasetY[(i*val_sets):((i+1)*val_sets)]
@@ -186,6 +189,11 @@ def lstm_model_kfold(name, lstm1_n, lstm2_n, fc3_n):
 	file.write("Testing accuracy: %0.1f%%\n\n" % (accuracy*100))
 	fprintline(file)
 	printline()
+	end_time = time.time()
+	total_time = end_time - start_time
+	string_time = time.strftime("%Hh%Mm%Ss", time.gmtime(total_time))
+	file.write("\nTotal training time:\n")
+	file.write(string_time)
 	
 	# Saving:
 	file.close()
