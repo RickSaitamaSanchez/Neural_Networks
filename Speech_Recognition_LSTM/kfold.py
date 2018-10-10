@@ -46,7 +46,7 @@ def lstm_model_kfold(name, lstm1_n, lstm2_n, fc3_n):
 	
 	# Training Features:
 	kfold_k = 5
-	training_iters = 10 # Multiply by 10 to know how many epochs
+	training_iters = 100 # Multiply by 10 to know how many epochs
 
 	# Dataset Features:	
 	dataset = 2400
