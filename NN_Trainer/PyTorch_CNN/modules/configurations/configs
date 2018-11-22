@@ -1,0 +1,8 @@
+**** CONFIGURATIONS ****
+~~~~~~~~~~~~~~~~~~~~~~~~
+learning_rate          =0.001
+minibatch              =4
+trainset               =1250
+testset                =250
+epochs                 =2
+~~~~~~~~~~~~~~~~~~~~~~~~
