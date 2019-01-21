@@ -1,0 +1,25 @@
+TRAINING STATISTICS - rnn_1_trainstats_2
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+FEATURES:
+
+Architecture: rnn_1
+Dataset: AT&T
+Train set size: 280
+Validation set size: 120
+Epochs: 50
+Learning rate: 0.001
+Momentum: 0.9
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+RESULTS:
+
+Training final accuracy: 100.0%
+Training final loss: 0.00
+Best training hits: 280 of 280
+Total training time: 00h19m20s
+Validation accuracy: 91.7%
+Validation loss: 0.43
+Validation hits: 110 of 120

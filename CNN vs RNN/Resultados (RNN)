@@ -1,0 +1,43 @@
+Características comuns aos treinamentos:
+ - Dataset: AT&T (40 pessoas, 10 imagens do rosto de cada uma em posições diferentes)
+ - Learning rate: 0.001
+ - Momentum: 0.9
+ - Arquitetura: rnn_1 (especificada no arquivo "models.py")
+
+* Os experimentos foram realizados cerca de 2 a 3 vezes, mas somente 1 relatório de estatística foi armazenado em 'statistics/'.
+
+~> Experimentos:
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1.
+	- Sem aumento de dados;
+	- Split: 70% treinamento e 30% validação;
+	- Épocas: 50
+	- Processamento: CPU (Intel Core i7-7700 3.60GHz - Arch x86_64)
+	- Estatísticas: 'statistics/rnn_1_trainstats_1.txt'
+
+    -> Resultados:
+
+	- Validação: 2.5 %
+
+* A arquitetura da rede se mostrou muito onerosa no tocante ao tempo de treinamento, bem como ineficaz. A acurácia de treinamento ficou presa entre 0% e 2.5%. Portanto, algumas modificações foram feitas.
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+-> A arquitetura da rede foi modificada, tornando as camadas lineares menores, bem como os inputs (imagens) foram redimensionalizados. Anteriormente a rede os recebia individualmente, com um tamanho de 92, o qual se refere à largura da imagem, por uma sequência de 3*112, onde 3 são os canais de cores e 112 é a altura da imagem. Após a modificação, a rede começou a utilizar batchs, sendo 3 batchs, cada um com um canal de cor, e um tamanho de 92 de input, com uma sequência de 112.
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+2. 
+	* Com arquitetura nova
+	- Sem aumento de dados;
+	- Split: 70% treinamento e 30% validação;
+	- Épocas: 50
+	- Processamento: CPU (Intel Core i7-7700 3.60GHz - Arch x86_64)
+	- Estatísticas: 'statistics/rnn_1_trainstats_1.txt'
+
+    -> Resultados:
+
+	- Validação:  %
